@@ -1,54 +1,43 @@
-Flight Management System
+**Flight Management System**
 
-This program is a flight management system that allows users to create, view, update, and delete flights. The program stores flight information in an array and flight data in a file.
+This is a Flight Management System implemented in C++ that allows you to manage the arrival, departure, and emergency handling of flights. The system uses queues and a priority queue (emergency queue) to organize and process the flights.
 
-How to use
-The program menu provides the following options:
+**Features**
 
-Create Flight
-Delete Flight
-Update Flight
-View Flights
-Exit
-To create a flight, select option 1 and enter the flight information, including flight number, origin, destination, departure time, and arrival time. The program will store the flight information in an array.
+Arrival of flights: You can enter the details of an arriving flight, including fuel quantity, destination, arrival date, and arrival time.
+Departure of flights: You can enter the details of a departing flight, including fuel quantity, destination, flight status, scheduled date, and scheduled time.
+Emergency handling: If a flight has low fuel (less than 40 units), it will be automatically added to the emergency queue.
+Confirmation for landing and takeoff: You can confirm the landing or takeoff of flights. The system dequeues flights from the landing or takeoff queues accordingly.
+Display reports: You can view reports of the flights, including arrival and departure details.
+User-friendly menu: The system provides a menu with options to perform various operations.
 
-To delete a flight, select option 2 and enter the flight number of the flight you want to delete. The program will delete the flight from the array.
+**Requirements**
 
-To update a flight, select option 3 and enter the flight number of the flight you want to update. The program will prompt you to enter the new flight information and update the flight in the array.
+C++ compiler
 
-To view the list of flights, select option 4. The program will display the flight information of all the flights that have been created.
+**Getting Started**
 
-To exit the program, select option 5.
+Clone the repository and navigate to the project directory.
+Compile the code using a C++ compiler.
+Run the compiled executable file.
 
-The program also includes a file management system that allows users to store and retrieve flight data. The file management system menu provides the following options:
+**Usage**
 
-Create file
-Delete file
-View files
-Exit
-To create a file, select option 1 and enter the file name, file extension, and file data. The program will store the file information and file data in separate arrays. The program can store up to 10 files.
+Upon running the program, you will be presented with a menu displaying the available options.
+Enter the corresponding number to select an option:
 
-To delete a file, select option 2 and enter the file name and file extension of the file you want to delete. The program will delete the file and its associated data from the arrays.
+1: Arrival - Enter the arrival flight ID and its details.
+2: Departure - Enter the departure flight ID and its details.
+3: Emergency - Enter the flight ID of an emergency situation.
+4: Confirmation for Landing and Takeoff - Confirm the landing or takeoff of flights.
+5: Display Reports - View reports of the flights.
+6: Exit - Exit the program.
 
-To view the list of files, select option 3. The program will display the file names and file extensions of all the files that have been created.
+Follow the prompts to provide the required information for each option.
 
-To exit the file management system, select option 4.
-
-Code explanation
-The program is written in C++ and consists of a main function and several helper functions. The helper functions include:
-
-FlightInfo: Initializes the flight information array with -1 values.
-createFlight: Creates a new flight and stores the flight information in the array.
-deleteFlight: Deletes a flight from the array.
-updateFlight: Updates a flight in the array.
-viewFlights: Displays the list of flights that have been created.
-saveToFile: Saves flight data to a file.
-readFromFile: Reads flight data from a file.
-FileInfo: Initializes the file information array with -1 values.
-FileData: Initializes the file data array with -1 values.
-createFile: Creates a new file and stores the file information and file data in the arrays.
-deleteFile: Deletes a file and its associated data from the arrays.
-viewFile: Displays the list of files that have been created.
-The program uses two structures to store flight information and file information. The FlightInfo structure includes the flight number, origin, destination, departure time, and arrival time. The FileInfo structure includes the file name, file extension, starting index, and file index.
-
-The program limits the number of flights that can be created to 10 and limits the amount of data that can be stored in a file to 1000 characters. If the program runs out of space in either array, it will display an error message.
+Continue selecting options until you choose to exit the program.
+Notes
+The system uses two landing queues (landingQueue1 and landingQueue2) and two takeoff queues (takeoffQueue1 and takeoffQueue2) to manage the incoming and outgoing flights.
+Flights with low fuel are automatically added to the emergency queue for priority handling.
+The system keeps track of various flight details, such as fuel quantity, destination, flight status, arrival time, departure time, waiting time, and runway ID.
+Feel free to explore and enhance this Flight Management System according to your requirements!
